@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>QRCode Scanner</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding [class.qrscan-transparent]="status.showing">
+    <ion-badge *ngIf="status.canChangeCamera" color="secondary">can change camera</ion-badge>
+    <ion-badge *ngIf="status.canEnableLight" color="secondary">can enable light</ion-badge>
+    <ion-badge *ngIf="status.canOpenSettings" color="secondary">can open settings</ion-badge>
+    <ion-badge *ngIf="status.currentCamera" color="secondary">current camera {{status.currentCamera}}</ion-badge>
+    <ion-badge *ngIf="status.denied" color="secondary">denied</ion-badge>
+    <ion-badge *ngIf="status.lightEnabled" color="secondary">light ON</ion-badge>
+    <ion-badge *ngIf="status.prepared" color="secondary">prepared!</ion-badge>
+    <ion-badge *ngIf="status.previewing" color="secondary">previewing...</ion-badge>
+    <ion-badge *ngIf="!status.previewing" color="secondary">previewing paused</ion-badge>
+    <ion-badge *ngIf="status.restricted" color="secondary">restricted</ion-badge>
+    <ion-badge *ngIf="status.scanning" color="secondary">scanning...</ion-badge>
+    <ion-badge *ngIf="status.showing" color="secondary">showing</ion-badge>
+
+
+    <div class="transparent-zone"></div>
+    <p>{{scannedText}}</p>
+    <button *ngIf="!status.authorized && status.canOpenSettings" ion-button (click)="openAppSettings()">open app settings</button>
+    <button ion-button (click)="showQRScanner()">show QRScanner</button>
+    <button *ngIf="status.showing && !status.scanning" ion-button (click)="scanQRCode()" icon-start><ion-icon name="qr-scanner"></ion-icon>scan code</button>
+    <button *ngIf="status.showing && status.scanning" ion-button (click)="cancelScan()" icon-start><ion-icon name="qr-scanner"></ion-icon>cancel scan</button>
+    <button *ngIf="status.canChangeCamera && status.currentCamera===1" ion-button (click)="switchCamera(0)" icon-start><ion-icon name="camera"></ion-icon>use back camera</button>
+    <button *ngIf="status.canChangeCamera && status.currentCamera===0" ion-button (click)="switchCamera(1)" icon-start><ion-icon name="camera"></ion-icon>use front camera</button>
+    <button *ngIf="status.showing" ion-button (click)="hideQRScanner()">hide QRScanner</button>
+    <button *ngIf="status.canEnableLight && !status.lightEnabled" ion-button (click)="switchLights()">switch Lights ON</button>
+    <button *ngIf="status.canEnableLight && status.lightEnabled" ion-button (click)="switchLights()">switch Lights OFF</button>
+
+    <button *ngIf="status.showing && !status.previewing" ion-button (click)="resumePreview()">resume previewing</button>
+    <button *ngIf="status.showing && status.previewing" ion-button (click)="pausePreview()">pause previewing</button>
+</ion-content>

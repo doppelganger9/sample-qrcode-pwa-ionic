@@ -1,0 +1,14 @@
+page-qrscan {
+    .transparent-zone {
+        width: 100%;
+        min-height: 200px;
+        background-color: transparent !important;
+    }
+    p {
+        background-color: white;
+    }
+}
+
+.qrscan-transparent {
+    background-color: transparent !important;
+}
