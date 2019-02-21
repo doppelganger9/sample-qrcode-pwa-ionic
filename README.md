@@ -1,4 +1,6 @@
 # Ionic PWA QR Code Scanner sample
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdoppelganger9%2Fsample-qrcode-pwa-ionic.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdoppelganger9%2Fsample-qrcode-pwa-ionic?ref=badge_shield)
+
 
 ## Purpose
 
@@ -30,3 +32,7 @@ And as a bonus:
 
 All issues and Pull-Requests are welcome.
 Please feel free to join the thread on Ionic Forum (see References above).
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fdoppelganger9%2Fsample-qrcode-pwa-ionic.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fdoppelganger9%2Fsample-qrcode-pwa-ionic?ref=badge_large)
