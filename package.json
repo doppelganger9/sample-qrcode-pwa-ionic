@@ -19,9 +19,9 @@
   },
   "dependencies": {
     "@angular/common": "5.0.3",
-    "@angular/compiler": "5.0.3",
+    "@angular/compiler": "19.2.18",
     "@angular/compiler-cli": "9.1.0",
-    "@angular/core": "5.0.3",
+    "@angular/core": "19.2.18",
     "@angular/forms": "5.0.3",
     "@angular/http": "5.0.3",
     "@angular/platform-browser": "5.0.3",
